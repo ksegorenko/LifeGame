@@ -1,0 +1,4 @@
+#Life 1.06
+#N Glider
+#R B3/S23
+#S M15/N10
