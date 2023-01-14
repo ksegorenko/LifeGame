@@ -8,16 +8,16 @@
 
 int main(int argc, char* argv[]) {
 	try {
-		Parser Parser;
-		Parser.CheckCommandLineArguments(argc, argv);
+		Parser parser;
+		parser.CheckCommandLineArguments(argc, argv);
 
-		Galaxy Galaxy;
-		Parser.GetFin() >> Galaxy;
+		Galaxy galaxy;
+		parser.GetFin() >> galaxy;
 
-		Field Field(Galaxy);
+		Field field(galaxy);
 
 		Game game;
-		game.StartGame(Field, Galaxy);
+		game.StartGame(field, galaxy);
 
 		return 0;
 	}
