@@ -1,28 +1,25 @@
 #include <iostream>
-#include "Parser.h"
-#include "Galaxy.h"
-#include "Rules.h"
-#include "Field.h"
-#include "Commands.h"
-#include "Game.h"
+
+#include "libs/Commands.h"
+#include "libs/Field.h"
+#include "libs/Galaxy.h"
+#include "libs/Game.h"
+#include "libs/Parser.h"
+#include "libs/Rules.h"
 
 int main(int argc, char* argv[]) {
-	try {
-		Parser parser;
-		parser.CheckCommandLineArguments(argc, argv);
+  try {
+    Parser parser;
+    parser.CheckCommandLineArguments(argc, argv);
 
-		Galaxy galaxy;
-		parser.GetFin() >> galaxy;
+    Galaxy galaxy;
+    parser.GetFin() >> galaxy;
 
-		Field field(galaxy);
+    Field field(galaxy);
 
-		Game game;
-		game.StartGame(field, galaxy);
-
-		return 0;
-	}
-	catch (std::exception& ex){
-		std::cout << ex.what() << std::endl;
-		return 1;
-	}
+    Game game;
+    game.StartGame(field, galaxy);
+  } catch (std::exception& ex) {
+    std::cout << ex.what() << std::endl;
+  }
 }
